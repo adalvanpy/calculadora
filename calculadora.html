@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilo.css">
+        <meta charset = "UTF-8">
+        <title> CAlculadora </title>
+        
+
+    </head>
+    <body>
+    <div class="lis">
+       <input type="text" id="exibir" readonly>
+       <div class= "les">
+
+          <button type="button" id="1" onclick="adicionarNumero('1')">1</button>
+          <button type="button" id="2"  onclick="adicionarNumero('2')">2</button>
+          <button type="button" id="3" onclick="adicionarNumero('3')">3</button>
+          <button type="button" id="soma" onclick="adicionarNumero('+')"> + </button>
+
+       </div>
+       <div class= "les">
+          <button type="button" id="4" onclick="adicionarNumero('4')">4</button>
+          <button type="button" id="5"  onclick="adicionarNumero('5')">5</button>
+          <button type="button" id="6" onclick="adicionarNumero('6')">6</button>
+          <button type="button" id="sub" onclick="adicionarNumero('-')"> - </button>
+        
+
+        </div>
+        <div class= "les">
+           <button type="button" id="7" onclick="adicionarNumero('7')">7</button>
+           <button type="button" id="8"  onclick="adicionarNumero('8')">8</button>
+           <button type="button" id="9" onclick="adicionarNumero('9')">9</button>
+           <button type="button" id="mult" onclick="adicionarNumero('*')"> * </button>
+
+       
+        </div>
+        <div class= "les">
+           <button type="button" id="c" onclick="limpar('AC')">AC</button>
+           <button type="button" id="="  onclick="resultado('=')">=</button>
+           <button type="button" id="0" onclick="adicionarNumero('0')">0</button>
+           <button type="button" id="divi" onclick="adicionarNumero('/')"> / </button>
+        
+
+        </div>
+    </div>
+     <script>
+        var add = '';
+        function adicionarNumero(valor){
+            add += valor;
+            document.getElementById("exibir").value = add;
+
+        }
+        function limpar(){
+            add = ''
+            document.getElementById("exibir").value = '';
+
+        }
+        function resultado() {
+            try {
+                add = eval(add); 
+                document.getElementById("exibir").value = add;
+            } catch (e) {
+                document.getElementById("exibir").value = 'Erro';
+                add = '';
+            }
+        }
+
+      
+     </script>
+
+    </body>
+</html>
